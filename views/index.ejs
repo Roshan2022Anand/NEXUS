@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORM</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+
+<body>
+  <main>
+    <div id="container">
+      <header><img src="../images/WhatsApp Image 2024-05-09 at 17.51.43_5613dd4a.jpg" alt="imh" id="logo"></header>
+
+      <form id="form-data" method="POST" action="/sendData">
+        <label for="user-name">NAME :</label>
+        <input type="text" name="user-name" id="user-name" required>
+        <label for="user-email">EMAIL :</label>
+        <input type="email" name="user-email" id="user-email" placeholder="eg.@gamil.com" required>
+        <label for="user-phone-no">PHONE NO:</label>
+        <input type="text" name="user-phone-no" id="user-phone-no" required>
+        <label for="user-whatsapp">WhatsApp:</label>
+        <input type="text" name="user-whatsapp" id="user-whatsapp" required>
+        <label for="qualification">Qualification:</label>
+        <select id="qualification" name="qualification" required>
+          <option value="">Select Qualification</option>
+          <option value="10th">10th</option>
+          <option value="puc">PUC</option>
+          <option value="Bachelors">Bachelor's Degree</option>
+          <option value="Masters">Master's Degree</option>
+          <option value="Diploma">Diploma</option>
+        </select>
+
+        <fieldset>
+          <legend>ADDRESS</legend>
+          <textarea name="user-address" id="user-address" rows="3" required></textarea>
+        </fieldset>
+        <input value="submit" type="submit" />
+      </form>
+      <div id="box1"></div>
+      <div id="box2"></div>
+    </div>
+  </main>
+  <script>
+
+  </script>
+</body>
+
 </html>
