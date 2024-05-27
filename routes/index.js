@@ -26,14 +26,15 @@ router.post('/sendData', async (req, res) => {
       qualification: req.body['qualification'],
       address: req.body['user-address']
     })
-    setTimeout(() => {
-      console.log("New user created:", dataInfo);
-      res.render("thank");
-    }, 3000)
+    res.status(200).render("thank");
   } catch (err) {
-    console.error(err);
-    res.status(500).send("Error saving data");
-    res.render("error", { error: err })
+    if (error.name === 'MongooseError' && error.message.includes('buffering timed out')) {
+      res.status(500).send('Database operation timed out');
+    } else {
+      // Handle other errors
+      console.error(error);
+      res.status(500).send('An error occurred while processing your request');
+    }
   }
 })
 
