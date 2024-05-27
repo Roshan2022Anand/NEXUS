@@ -3,15 +3,14 @@
 }
 
 :root {
-    --one: #f06b39;
+    --one: #ffffff;
     --two: #1a1a1a;
     --three: #232323;
-    --four: #ecfeff;
+    --four: #000000;
 }
 
 body {
-    background: #ffffff;
-    background: linear-gradient(to bottom, #ffffff 0%, #e1e8ed 100%);
+    background: linear-gradient(to bottom, var(--four) 0%, var(--two) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e1e8ed', GradientType=0);
     height: 100%;
     margin: 0;
@@ -19,7 +18,13 @@ body {
     background-attachment: fixed;
 
 }
-
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 .wrapper-1 {
     border: 3px solid var(--one);
     border-radius: 10px;
